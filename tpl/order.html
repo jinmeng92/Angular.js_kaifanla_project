@@ -1,0 +1,37 @@
+<div ng-include="'tpl/header.html'"></div>
+
+<div class="panel panel-default">
+  <div class="panel-body" ng-hide="ordered">
+    <form>
+      <div class="form-group">
+        <label for="userName">联系人：</label>
+        <input type="text" id="userName" class="form-control" placeholder="请输入您的姓名" ng-model="order.user_name" />
+      </div>
+      <div class="form-group">
+        <label>性别：</label>
+
+        <div class="radio-inline">
+          <label><input type="radio" name="userSex" value="1" ng-model="order.sex" />先生</label>
+        </div>
+        <div class="radio-inline">
+          <label><input type="radio" name="userSex" value="2" ng-model="order.sex"/>女士</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="userTel">联系电话：</label>
+        <input type="text" id="userTel" class="form-control" placeholder="请输入联系电话" ng-model="order.phone"/>
+      </div>
+      <div class="form-group">
+        <label for="userAddr">送餐地址：</label><br/>
+        <textarea class="form-control" name="userAddr" id="userAddr" rows="3" ng-model="order.addr"></textarea>
+      </div>
+      <button ng-hide="ordered" ng-click="orderDish()" type="button" class="btn btn-success btn-block">确认下单</button>
+    </form>
+  </div>
+  <div ng-show="ordered" class="alert alert-success">
+    <h4>订餐成功！</h4>
+    <p>您的订单编号为：{{oid}}。</p>
+    <p>您可以在<a href="#/myorder">用户中心</a>查看订单状态。</p>
+  </div>
+</div>
+<div ng-include="'tpl/footer.html'"></div>

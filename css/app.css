@@ -1,0 +1,54 @@
+body {
+  overflow-x: hidden;
+  position: relative;
+}
+.page {
+  transition: all 0.5s linear;
+  position: absolute;
+  width: 100%;
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+/*即将要离开的页面动画开始时的样式*/
+.page.ng-leave {
+  opacity: 1;
+  left: 0;
+}
+/*即将要离开的页面动画结束时的样式*/
+.page.ng-leave.ng-leave-active {
+  opacity: 0;
+  left: -100%;
+}
+/*即将进入页面动画开始时的样式*/
+.page.ng-enter {
+  opacity: 0;
+  left: -100%;
+}
+/*即将要进入的页面动画结束时的样式*/
+.page.ng-enter.ng-enter-active {
+  opacity: 1;
+  left: 0;
+}
+ul.bottomList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+ul.bottomList li {
+  display: inline-block;
+  width: 32%;
+  text-align: center;
+  line-height: 50px;
+}
+ul.bottomList li a {
+  text-decoration: none;
+}
+div.container table thead tr th {
+  padding: 5px;
+}
+div.container table tbody tr td {
+  padding: 5px;
+}
+div.container table tbody tr:nth-child(odd) {
+  background: #efefef;
+}
